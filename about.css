@@ -218,27 +218,27 @@
     transform: scaleX(0);
 }
 
-/* Projects Section */
-.projects-section {
+  /* Projects Section */
+  .projects-section {
     padding: var(--space-xxl) var(--space-lg);
     text-align: center;
-}
+  }
 
-.projects-section h3 {
+  .projects-section h3 {
     font-size: 2rem;
     margin-bottom: var(--space-xl);
     color: var(--text);
-}
+  }
 
-.projects-container {
+  .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-xl);
     max-width: 1200px;
     margin: 0 auto;
-}
+  }
 
-.project-card {
+  .project-card {
     background-color: var(--card-bg);
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -249,14 +249,14 @@
     height: 100%;
     position: relative;
     z-index: 1;
-}
+  }
 
-.project-card:hover {
+  .project-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
-}
+  }
 
-.project-image {
+  .project-image {
     height: 120px;
     background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
     display: flex;
@@ -264,40 +264,119 @@
     justify-content: center;
     font-size: 3rem;
     color: white;
-}
+  }
 
-.project-details {
+  .project-details {
     padding: var(--space-lg);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-}
+  }
 
-.project-details h4 {
+  .project-details h4 {
     font-size: 1.3rem;
     margin-bottom: var(--space-md);
     color: var(--text);
-}
+  }
 
-.project-details p {
+  .project-details p {
     color: var(--text-light);
     margin-bottom: var(--space-lg);
     flex-grow: 1;
-}
+  }
 
-.project-tech {
+  .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-}
+  }
 
-.project-tech span {
+  .project-tech span {
     background-color: rgba(67, 97, 238, 0.1);
     color: var(--primary);
     border-radius: var(--radius-full);
     padding: var(--space-xs) var(--space-md);
     font-size: 0.8rem;
-}
+  }
+
+  /* ======
+     Project Links - Buttons
+     ====== */
+  .project-links {
+    margin-top: var(--space-md);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .project-links .btn {
+    flex: 1 1 150px; /* Equal width with flexibility */
+    max-width: 180px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden; /* Needed for ripple effect */
+  }
+
+  /* Primary Button (Live Demo) */
+  .project-links .btn {
+    background: var(--primary);
+    color: #fff;
+    border: 2px solid var(--primary);
+  }
+
+  .project-links .btn:hover {
+    background: transparent;
+    color: var(--primary);
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  }
+
+  /* Secondary Button (View Code) */
+  .project-links .btn.secondary {
+    background: var(--text);
+    color: #fff;
+    border: 2px solid var(--text);
+  }
+
+  .project-links .btn.secondary:hover {
+    background: transparent;
+    color: var(--text);
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+  }
+
+  /* Ripple Effect */
+  .project-links .btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background: rgba(255, 255, 255, 0.4);
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(20);
+      opacity: 0;
+    }
+  }
 
 /* Contact Section */
 .contact-section {
@@ -423,3 +502,4 @@ body.dark-mode .contact-method {
         padding: var(--space-md);
     }
 }
+
